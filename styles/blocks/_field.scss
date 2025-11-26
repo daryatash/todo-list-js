@@ -14,7 +14,7 @@
     }
 
     &[type="search"] {
-        --searchIcon: url('/icons/icon-search_accent.svg');
+        --searchIcon: url('/todo-list-js/icons/icon-search_accent.svg');
 
         &:placeholder-shown {
             padding-right: 53px;
@@ -34,7 +34,7 @@
         }
 
         &[type="search"] {
-            --searchIcon: url('/icons/icon-search_light.svg');
+            --searchIcon: url('/todo-list-js/icons/icon-search_light.svg');
         }
     }
 
@@ -47,7 +47,7 @@
         }
 
         &[type="search"] {
-            --searchIcon: url('/icons/icon-search_light.svg');
+            --searchIcon: url('/todo-list-js/icons/icon-search_light.svg');
         }
     }
 }

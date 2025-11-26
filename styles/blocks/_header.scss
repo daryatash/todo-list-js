@@ -60,7 +60,7 @@
             -webkit-appearance: none;
             -moz-appearance: none;
 
-            background-image: url('/icons/icon-arrow-down.svg');
+            background-image: url('/todo-list-js/icons/icon-arrow-down.svg');
             background-repeat: no-repeat;
             background-position: right 10px center;
             background-size: 7px;
@@ -73,7 +73,7 @@
     }
 
     &__theme-toggle-button {
-        --themeToggleIcon: url('/icons/icon-dark-theme.svg');
+        --themeToggleIcon: url('/todo-list-js/icons/icon-dark-theme.svg');
 
         position: relative;
         min-width: 38px;
@@ -92,7 +92,7 @@
         }
 
         @media (prefers-color-scheme: dark) {
-            --themeToggleIcon: url('/icons/icon-light-theme.svg');
+            --themeToggleIcon: url('/todo-list-js/icons/icon-light-theme.svg');
 
             &::before {
                 transform: translate(-50%, -50%) rotate(360deg);
@@ -100,7 +100,7 @@
         }
 
         body.dark-theme & {
-            --themeToggleIcon: url('../../icons/icon-light-theme.svg');
+            --themeToggleIcon: url('/todo-list-js/icons/icon-light-theme.svg');
 
             &::before {
                 transform: translate(-50%, -50%) rotate(360deg);

@@ -7,7 +7,7 @@
     padding-block: 30px;
 
     &__empty {
-        --image: url('/images/image-empty_light.png');
+        --image: url('/todo-list-js/images/image-empty_light.png');
 
         display: flex;
         flex-direction: column;
@@ -27,11 +27,11 @@
         }
 
         @media (prefers-color-scheme: dark) {
-            --image: url('/images/image-empty_dark.png');
+            --image: url('/todo-list-js/images/image-empty_dark.png');
         }
 
         body.dark-theme & {
-            --image: url('/images/image-empty_dark.png');
+            --image: url('/todo-list-js/images/image-empty_dark.png');
         }
     }
 
