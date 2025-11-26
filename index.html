@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO list</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <script src="./scripts/script.js" defer></script>
+</head>
+<body>
+    <header class="header container">
+        <h1 class="header__title">TODO LIST</h1>
+        <div class="header__body">
+            <form class="header__search" data-js-search-form>
+                <label for="search" class="header__search__label visually-hidden">Search</label>
+                <input id="search" type="search" class="header__search__field field" placeholder="Search note..." data-js-search-input>
+            </form>
+            <div class="header__actions">
+                <div class="header__select">
+                    <label for="select" class="header__select-label visually-hidden">Select category</label>
+                    <select id="select" class="header__select-control" data-js-select>
+                        <option class="header__select-option" value="ALL" selected>ALL</option>
+                        <option class="header__select-option" value="Checked">Checked</option>
+                        <option class="header__select-option" value="Not checked">Not checked</option>
+                    </select>
+                </div>
+                <button class="header__theme-toggle-button button" aria-label="Toggle theme" data-js-theme-toggle-button></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="notes container">
+            <h2 class="visually-hidden">Notes list</h2>
+
+            <div class="notes__empty" data-js-notes-empty>
+                <div class="notes__empty-image"></div>
+                <p class="notes__empty-text">Empty...</p>
+            </div>
+
+            <ul class="notes__list" data-js-notes-list></ul>
+            <button class="notes__add-button" data-js-modal-overlay-open-button></button>
+        </section>
+
+        <div class="modal-overlay" data-js-modal-overlay>
+            <div class="modal-overlay__window">
+                <header class="modal-overlay__header">
+                    <h3 class="modal-overlay__title">New Note</h3>
+                </header>
+                <div class="modal-overlay__body">
+                    <form class="modal-overlay__form" id="noteForm" data-js-modal-overlay-form>
+                        <label for="noteInput" class="modal-overlay__label visually-hidden">Input note</label>
+                        <input 
+                            id="noteInput" 
+                            class="modal-overlay__input field" 
+                            placeholder="Input your note..." 
+                            required 
+                            autocomplete="off"
+                            data-js-modal-overlay-input
+                        >
+                    </form>
+                    <div class="modal-overlay__actions">
+                        <button class="modal-overlay__button-cancel button button--transparent" data-js-modal-overlay-close-button>Cancel</button>
+                        <button class="modal-overlay__button-apply button" type="submit" form="noteForm">Apply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

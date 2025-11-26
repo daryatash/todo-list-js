@@ -1,0 +1,110 @@
+@use '../helpers' as *;
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;;
+    row-gap: 18px;
+    padding-top: 40px;
+    width: 100%;
+
+    &__body {
+        display: grid;
+        grid-template-columns: 80% auto;
+        gap: 16px;
+        width: 100%;
+
+        @include mobile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__title {
+        font-size: 26px;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    &__search {
+        width: 100%;
+    }
+
+    &__actions {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        column-gap: 16px;
+        max-width: 140px;
+    }
+
+    &__select {
+        font-size: 18px;
+        font-weight: 500;
+        
+        &-control {
+            min-width: 85px;
+            width: 100%;
+            height: var(--field-button-height);
+            padding-inline: 10px;
+            color: var(--color-light);
+            background-color: var(--color-accent);
+            border: var(--border);
+            border-radius: var(--border-radius);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+
+            background-image: url('../../icons/icon-arrow-down.svg');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 7px;
+        }
+
+        &-option {
+            background-color: var(--color-light);
+            color: var(--color-dark);
+        }
+    }
+
+    &__theme-toggle-button {
+        --themeToggleIcon: url('../../icons/icon-dark-theme.svg');
+
+        position: relative;
+        min-width: 38px;
+        width: 100%;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 22px;
+            height: 22px;
+            background: var(--themeToggleIcon) center/contain no-repeat;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            --themeToggleIcon: url('../../icons/icon-light-theme.svg');
+
+            &::before {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        body.dark-theme & {
+            --themeToggleIcon: url('../../icons/icon-light-theme.svg');
+
+            &::before {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+    }
+}

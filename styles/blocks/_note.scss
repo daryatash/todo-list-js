@@ -1,0 +1,93 @@
+@use '../helpers' as *;
+
+.note {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    &__content {
+        display: flex;
+        align-items: center;
+        column-gap: 17px;
+    }
+
+    &__checkbox {
+        flex-shrink: 0;
+        width: 26px;
+        height: 26px;
+        margin: 0;
+        cursor: pointer;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        border: var(--border);
+        border-radius: 2px;
+        position: relative;
+
+        &:checked {
+            background-color: var(--color-accent);
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 13px;
+                height: 13px;
+                color: var(--color-light);
+                background: url('../../icons/icon-check.svg') center/contain no-repeat;
+            }
+        }
+
+        &:checked + .note__label {
+            opacity: 0.5;
+            text-decoration: line-through;
+            font-weight: 400;
+        }
+    }
+
+    &__label {
+        font-size: 20px;
+        font-weight: 500;
+        width: 100%;
+        pointer-events: none;
+    }
+
+    &__actions {
+        display: flex;
+        column-gap: 10px;
+        transition-duration: var(--transition-duration);
+        opacity: 0;
+        visibility: hidden;
+
+        @include touch-device {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &__edit-button,
+    &__delete-button {
+        width: 20px;
+        height: 20px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        border: none;
+        color: var(--color-light-gray);
+
+        svg {
+            flex-shrink: 0;
+        }
+
+        * {
+            pointer-events: none;
+        }
+
+        @include hover {
+            color: var(--color-dark);
+        }
+    }
+}

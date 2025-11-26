@@ -1,0 +1,21 @@
+:root {
+    --color-dark: #252525;
+    --color-light: #F7F7F7;
+    --color-accent: #6C63FF;
+    --color-light-gray: #CDCDCD;
+    --color-light-gray-alt: #C3C1E5;
+    --color-gray: #666666;
+
+    --border: 1px solid var(--color-accent);
+    --border-radius: 5px;
+
+    --font-family-base: 'Kanit', sans-serif;
+    --font-family-accent: 'Inter', sans-serif;
+
+    --container-width: 750px;
+    --container-padding-x: 20px;
+
+    --field-button-height: 38px;
+
+    --transition-duration: 0.2s;
+}

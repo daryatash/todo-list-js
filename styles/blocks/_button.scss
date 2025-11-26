@@ -1,0 +1,22 @@
+@use '../helpers' as *;
+
+.button {
+    height: var(--field-button-height);
+    background-color: var(--color-accent);
+    color: var(--color-light);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    transition-duration: var(--transition-duration);
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 500;
+
+    @include hover {
+        box-shadow: 0 0 6px 0 var(--color-accent);
+    }
+
+    &--transparent {
+        background-color: transparent;
+        color: var(--color-accent);
+    }
+}

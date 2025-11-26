@@ -1,0 +1,34 @@
+body {
+    display: flex;
+    flex-direction: column;
+
+    font-family: var(--font-family-base);
+    color: var(--color-dark);
+    background-color: var(--color-light);
+    transition-duration: var(--transition-duration);
+
+    @media (prefers-color-scheme: dark) {
+        color: var(--color-light);
+        background-color: var(--color-dark);
+    }
+
+    &.dark-theme {
+        color: var(--color-light);
+        background-color: var(--color-dark);
+    }
+}
+
+button,
+label,
+input,
+select,
+svg * {
+    transition-duration: var(--transition-duration);
+}
+
+
+:focus-visible {
+    outline: 2px dashed var(--color-accent);
+    outline-offset: 4px;
+    transition-duration: 0s !important;
+}

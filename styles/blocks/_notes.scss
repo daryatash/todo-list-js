@@ -1,0 +1,103 @@
+@use '../helpers' as *;
+
+.notes {
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh;
+    padding-block: 30px;
+
+    &__empty {
+        --image: url('../../images/image-empty_light.png');
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+        row-gap: 20px;
+        margin-inline: auto;
+
+        &-image {
+            width: 221px;
+            height: 174px;
+            background: var(--image) center/contain no-repeat;
+        }
+
+        &-text {
+            font-size: 20px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            --image: url('../../images/image-empty_dark.png');
+        }
+
+        body.dark-theme & {
+            --image: url('../../images/image-empty_dark.png');
+        }
+    }
+
+    &__list {
+        flex: 1;
+        max-width: 520px;
+        width: 100%;
+        margin-inline: auto;
+    }
+
+    &__item {
+        cursor: pointer;
+
+        &:not(:first-child) {
+            padding-top: 17px;
+        }
+
+        &:not(:last-child) {
+            padding-bottom: 17px;
+            border-bottom: var(--border);
+        }
+        
+        @include hover {
+            .note__actions {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    &__add-button {
+        position: sticky;
+        bottom: 30px; 
+        align-self: flex-end;
+        width: 50px;
+        height: 50px;
+        background-color: var(--color-accent);
+        border-radius: 50%;
+        border: none;
+        box-shadow: 0 0 4px 0 var(--color-accent);
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 24px;
+            width: 3px;
+            background-color: var(--color-light);
+            border-radius: var(--border-radius);
+        }
+
+        &::after {
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+
+        @include hover {
+            border: var(--border);
+            background-color: transparent;
+
+            &::before,
+            &::after {
+                background-color: var(--color-accent);
+            }
+        }
+    }
+}
